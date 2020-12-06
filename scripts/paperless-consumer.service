@@ -1,0 +1,10 @@
+[Unit]
+Description=Paperless consumer
+
+[Service]
+User=paperless
+Group=paperless
+ExecStart=/home/paperless/project/virtualenv/bin/python /home/paperless/project/src/manage.py document_consumer
+
+[Install]
+WantedBy=multi-user.target

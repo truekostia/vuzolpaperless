@@ -1,0 +1,12 @@
+[Unit]
+Description=Paperless webserver
+After=network.target
+Wants=network.target
+
+[Service]
+User=paperless
+Group=paperless
+ExecStart=/home/paperless/project/virtualenv/bin/gunicorn --pythonpath=/home/paperless/project/src paperless.wsgi -w 2
+
+[Install]
+WantedBy=multi-user.target
